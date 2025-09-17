@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Hoyraal Hospital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-blue-100 text-blue-900 font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-blue-500 shadow-md rounded-b-3xl">
+    <div class="container mx-auto flex flex-wrap justify-between items-center gap-4 p-4">
+      <!-- Logo -->
+      <div class="w-36">
+        <img src="images/logo-sm.png" alt="Horaal Hospital Logo">
+      </div>
+
+      <!-- Navigation Links (Desktop) -->
+      <nav class="hidden md:flex space-x-6 text-white">
+        <a href="index.html" class="hover:text-yellow-200">Home</a>
+        <a href="About.html" class="hover:text-yellow-200">About</a>
+        <a href="Departments.html" class="hover:text-yellow-200">Departments</a>
+        <a href="Doctors.html" class="hover:text-yellow-200">Doctors</a>
+        <a href="Appointments.html" class="hover:text-yellow-200">Appointments</a>
+        <a href="#" class="hover:text-yellow-200">Contact</a>
+      </nav>
+
+      <!-- Search (Desktop only) -->
+      <div class="hidden lg:flex items-center space-x-2">
+        <input type="text" placeholder="Search..." class="px-4 py-2 rounded-full text-blue-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
+        <button class="bg-yellow-400 text-blue-900 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300 transition">Go</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Hero -->
+  <section class="text-blue-500 py-20">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl font-bold mb-4">Contact Us</h1>
+      <p class="text-lg">If you have any questions or want to book an appointment, feel free to reach out using the form below.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+      <!-- Contact Form -->
+      <div class="bg-gray-100 p-8 rounded-3xl shadow-lg">
+        <h2 class="text-2xl font-semibold text-blue-900 mb-6">Contact Form</h2>
+        <form>
+          <div class="mb-4">
+            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name" required>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+            <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Email" required>
+          </div>
+          <div class="mb-4">
+            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+            <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Write your message here..." required></textarea>
+          </div>
+          <button type="submit" class="bg-blue-900 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-800 transition">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="space-y-6 text-blue-900">
+        <h2 class="text-2xl font-semibold">Contact Information</h2>
+        <div>
+          <p class="font-medium">📞 Phone: <a href="tel:+252612345678" class="underline">+252 61 2345678</a></p>
+          <p class="font-medium">✉️ Email: <a href="mailto:info@horaalhospital.so" class="underline">info@horaalhospital.so</a></p>
+          <p class="font-medium">📍 Address: Wadajir, Mogadishu, Somalia</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold">Working Hours:</h3>
+          <p>Monday – Friday: 8:00 AM – 5:00 PM</p>
+          <p>Saturday & Sunday: Closed</p>
+        </div>
+        <!-- Map placeholder -->
+        <div class="mt-6">
+          <div class="w-full h-64 bg-gray-300 rounded-xl flex items-center justify-center">
+            <span class="text-gray-500">Map Placeholder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-10 text-center">
+    <img src="images/logo-sm.png" class="mx-auto w-16 mb-2" alt="Horaal Logo" />
+    <h3 class="text-xl font-semibold">Horaal Hospital</h3>
+    <p class="text-sm mt-2">Quality healthcare with compassion and trust.</p>
+    <div class="mt-4 flex justify-center space-x-4 text-xl">
+      <a href="#"><i class="fab fa-facebook hover:text-yellow-300"></i></a>
+      <a href="#"><i class="fab fa-twitter hover:text-yellow-300"></i></a>
+      <a href="#"><i class="fab fa-instagram hover:text-yellow-300"></i></a>
+    </div>
+    <p class="text-sm mt-4">&copy; 2025 Horaal Hospital. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

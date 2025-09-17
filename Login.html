@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-screen bg-gray-900 relative">
+
+  <!-- Back Arrow Icon -->
+  <a href="index.html" class="absolute top-4 left-4 text-white hover:text-gray-300 text-2xl">
+    ←
+  </a>
+
+  <div class="flex justify-center items-center h-full px-8">
+    <div class="bg-blue-500 p-12 rounded-lg max-w-md w-full">
+      <img src="images/logo-sm.png" class="w-40 mx-auto mb-8" alt="Logo" />
+
+      <h1 class="text-4xl font-medium text-white mb-8 text-center" id="sign-state-title">Sign In</h1>
+
+      <form id="login-form">
+        <div id="name-input" class="hidden">
+          <input type="text" placeholder="Your Name"
+            class="w-full h-12 bg-gray-700 text-white px-5 mb-4 rounded-md placeholder-gray-400" />
+        </div>
+
+        <input type="email" placeholder="Your Email"
+          class="w-full h-12 bg-gray-700 text-white px-5 mb-4 rounded-md placeholder-gray-400" />
+        <input type="password" placeholder="Password"
+          class="w-full h-12 bg-gray-700 text-white px-5 mb-4 rounded-md placeholder-gray-400" />
+
+        <button type="submit"
+          class="w-full h-12 bg-red-600 text-white rounded-md font-semibold mb-4">Sign In</button>
+
+        <div class="flex justify-between text-gray-200 text-sm mb-4">
+          <div class="flex items-center">
+            <input type="checkbox" class="mr-2 w-4 h-4" />
+            <label for="">Remember me</label>
+          </div>
+          <p>Need Help?</p>
+        </div>
+      </form>
+
+      <div class="text-center text-gray-300">
+        <p id="switch-text">
+          New to Netflex? <span id="switch-link" class="text-white cursor-pointer">Sign Up now</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const signStateTitle = document.getElementById("sign-state-title");
+    const nameInput = document.getElementById("name-input");
+    let switchLink = document.getElementById("switch-link");
+    const switchText = document.getElementById("switch-text");
+    const loginForm = document.getElementById("login-form");
+
+    let signState = "Sign In";
+
+    document.addEventListener("click", (e) => {
+      if (e.target && e.target.id === "switch-link") {
+        if (signState === "Sign In") {
+          signState = "Sign Up";
+          signStateTitle.innerText = "Sign Up";
+          nameInput.classList.remove("hidden");
+          loginForm.querySelector("button").innerText = "Sign Up";
+          switchText.innerHTML = `Already have an account? <span id="switch-link" class="text-white cursor-pointer">Sign In Now</span>`;
+        } else {
+          signState = "Sign In";
+          signStateTitle.innerText = "Sign In";
+          nameInput.classList.add("hidden");
+          loginForm.querySelector("button").innerText = "Sign In";
+          switchText.innerHTML = `New to Netflex? <span id="switch-link" class="text-white cursor-pointer">Sign Up now</span>`;
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

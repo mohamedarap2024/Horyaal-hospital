@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appointments | Horaal Hospital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-blue-100 text-blue-900 font-sans">
+
+<!-- Navbar -->
+<header class="bg-blue-500 shadow-md rounded-b-3xl">
+    <div class="container mx-auto flex flex-wrap justify-between items-center gap-4 p-4">
+      
+      <!-- Logo -->
+      <div class="w-36">
+        <img src="images/logo-sm.png" alt="Horaal Hospital Logo">
+      </div>
+  
+      <!-- Navigation Links (Desktop) -->
+      <nav class="hidden md:flex space-x-6 text-white">
+        <a href="index.html" class="hover:text-yellow-200">Home</a>
+        <a href="About.html" class="hover:text-yellow-200">About</a>
+        <a href="Departments.html" class="hover:text-yellow-200">Departments</a>
+        <a href="Doctors.html" class="hover:text-yellow-200">Doctors</a>
+        <a href="#" class="hover:text-yellow-200">Appointments</a>
+        <a href="Contact.html" class="hover:text-yellow-200">Contact</a>
+      </nav>
+  
+      <!-- Search (Desktop only) -->
+      <div class="hidden lg:flex items-center space-x-2">
+        <input
+          type="text"
+          placeholder="Search..."
+          class="px-4 py-2 rounded-full text-blue-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+        />
+        <button
+          class="bg-yellow-400 text-blue-900 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300 transition"
+        >
+        <a href="Login.html">
+        Go
+        </a>
+        </button>
+      </div>
+  
+      <!-- Mobile menu button -->
+      <button id="menu-btn" class="md:hidden text-white text-3xl">
+        <i id="menu-icon" class="fas fa-bars"></i>
+      </button>
+    </div>
+  
+    <!-- Mobile menu (Links - Column) -->
+    <div id="mobile-menu" class="md:hidden hidden flex-col px-4 pb-4 space-y-2 bg-blue-500 rounded-b-2xl text-white">
+      <a href="index.html" class="block hover:text-yellow-200">Home</a>
+      <a href="About.html" class="block hover:text-yellow-200">About</a>
+      <a href="Departments.html" class="block hover:text-yellow-200">Departments</a>
+      <a href="Doctors.html" class="block hover:text-yellow-200">Doctors</a>
+      <a href="#" class="block hover:text-yellow-200">Appointments</a>
+      <a href="Contact.html" class="block hover:text-yellow-200">Contact</a>
+    </div>
+  
+    <!-- Mobile Search (Input only - Go button hidden) -->
+    <div id="mobile-search" class="md:hidden hidden px-4 py-2 bg-blue-500 rounded-b-2xl text-white">
+      <input
+        type="text"
+        placeholder="Search..."
+        class="w-full px-4 py-2 rounded-full text-blue-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+      />
+      <!-- Go button hidden on mobile -->
+      <!-- <button class="hidden">Go</button> -->
+    </div>
+  </header>
+
+<!-- Hero -->
+<section class="container mx-auto px-6 max-w-2xl bg-transparent rounded-3xl p-8">
+
+  <div class="container mx-auto px-6">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Book an Appointment</h1>
+    <p class="text-lg">Secure your health by scheduling a visit with our trusted professionals.</p>
+  </div>
+</section>
+
+<!-- Appointment Form -->
+<section class="py-16">
+  <div class="container mx-auto px-6 max-w-2xl bg-white rounded-3xl shadow-2xl p-8">
+    <h2 class="text-2xl font-semibold mb-6 text-center text-blue-600">Fill in your details</h2>
+    
+    <form class="space-y-4">
+      <div>
+        <label class="block text-blue-800 font-medium mb-1">Full Name</label>
+        <input type="text" placeholder="Your name" class="w-full px-4 py-3 rounded-lg border border-blue-300 focus:ring-2 focus:ring-blue-400" />
+      </div>
+      <div>
+        <label class="block text-blue-800 font-medium mb-1">Phone Number</label>
+        <input type="tel" placeholder="e.g. 0612345678" class="w-full px-4 py-3 rounded-lg border border-blue-300 focus:ring-2 focus:ring-blue-400" />
+      </div>
+      <div>
+        <label class="block text-blue-800 font-medium mb-1">Email Address</label>
+        <input type="email" placeholder="you@example.com" class="w-full px-4 py-3 rounded-lg border border-blue-300 focus:ring-2 focus:ring-blue-400" />
+      </div>
+      <div>
+        <label class="block text-blue-800 font-medium mb-1">Select Department</label>
+        <select class="w-full px-4 py-3 rounded-lg border border-blue-300 focus:ring-2 focus:ring-blue-400">
+          <option>General Consultation</option>
+          <option>Cardiology</option>
+          <option>Radiology</option>
+          <option>Laboratory</option>
+          <option>Vaccination</option>
+          <option>Emergency</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-blue-800 font-medium mb-1">Preferred Date & Time</label>
+        <input type="datetime-local" class="w-full px-4 py-3 rounded-lg border border-blue-300 focus:ring-2 focus:ring-blue-400" />
+      </div>
+      <div class="text-center">
+        <button type="submit" class="mt-4 bg-yellow-400 text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all">
+          Submit Appointment
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-blue-600 text-white py-10 text-center">
+  <img src="images/logo-sm.png" class="mx-auto w-16 mb-2" alt="Horaal Logo" />
+  <h3 class="text-xl font-semibold">Horaal Hospital</h3>
+  <p class="text-sm mt-2">Quality healthcare with compassion and trust.</p>
+  <div class="mt-4 flex justify-center space-x-4 text-xl">
+    <a href="#"><i class="fab fa-facebook hover:text-yellow-300"></i></a>
+    <a href="#"><i class="fab fa-twitter hover:text-yellow-300"></i></a>
+    <a href="#"><i class="fab fa-instagram hover:text-yellow-300"></i></a>
+  </div>
+  <p class="text-sm mt-4">&copy; 2025 Horaal Hospital. All rights reserved.</p>
+</footer>
+<!-- JavaScript for responsive navbar -->
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileSearch = document.getElementById('mobile-search');
+    const menuIcon = document.getElementById('menu-icon');
+  
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileSearch.classList.toggle('hidden');
+  
+      // Icon toggle
+      if (mobileMenu.classList.contains('hidden')) {
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+      } else {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-times');
+      }
+    });
+  </script>
+
+</body>
+</html>
