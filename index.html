@@ -1,415 +1,248 @@
 <!DOCTYPE html>
 <html lang="so">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Horyaal Hospital</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horyaal Hospital - Doctors</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <style>
-    /* CSS to show only one page at a time */
-    .page {
-      display: none;
-    }
-
-    .page.active {
-      display: block;
-    }
-  </style>
 </head>
-
 <body class="bg-blue-100 text-blue-900 font-sans">
 
-  <header class="bg-blue-500 shadow-md rounded-b-3xl">
-    <div class="container mx-auto flex flex-wrap justify-between items-center gap-4 p-4">
-      <div class="w-36">
-        <img src="images/logo-sm.png" alt="Horaal Hospital Logo">
-      </div>
+<!-- Navbar -->
+<header class="bg-blue-500 shadow-md rounded-b-3xl">
+  <div class="container mx-auto flex flex-wrap justify-between items-center gap-4 p-4">
+    
+    <!-- Logo -->
+    <div class="w-36">
+      <img src="images/logo-sm.png" alt="Horaal Hospital Logo">
+    </div>
 
-      <nav class="hidden md:flex space-x-6 text-white">
-        <a href="#" class="hover:text-yellow-200" data-page-id="home">Home</a>
-        <a href="#" class="hover:text-yellow-200" data-page-id="about">About</a>
-        <a href="#" class="hover:text-yellow-200" data-page-id="departments">Departments</a>
-        <a href="#" class="hover:text-yellow-200" data-page-id="doctors">Doctors</a>
-        <a href="#" class="hover:text-yellow-200" data-page-id="appointments">Appointments</a>
-        <a href="#" class="hover:text-yellow-200" data-page-id="contact">Contact</a>
-      </nav>
+    <!-- Navigation Links (Desktop) -->
+    <nav class="hidden md:flex space-x-6 text-white">
+      <a href="index.html" class="hover:text-yellow-200">Home</a>
+      <a href="About.html" class="hover:text-yellow-200">About</a>
+      <a href="Departments.html" class="hover:text-yellow-200">Departments</a>
+      <a href="#" class="hover:text-yellow-200">Doctors</a>
+      <a href="Appointments.html" class="hover:text-yellow-200">Appointments</a>
+      <a href="Contact.html" class="hover:text-yellow-200">Contact</a>
+    </nav>
 
-      <div class="hidden lg:flex items-center space-x-2">
-        <input type="text" placeholder="Search..."
-          class="px-4 py-2 rounded-full text-blue-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
-        <button class="bg-yellow-400 text-blue-900 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300 transition">
-          <a href="#" data-page-id="login">Go</a>
-        </button>
-      </div>
-
-      <button id="menu-btn" class="md:hidden text-white text-3xl">
-        <i id="menu-icon" class="fas fa-bars"></i>
+    <!-- Search (Desktop only) -->
+    <div class="hidden lg:flex items-center space-x-2">
+      <input
+        type="text"
+        placeholder="Search..."
+        class="px-4 py-2 rounded-full text-blue-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+      />
+      <button
+        class="bg-yellow-400 text-blue-900 px-4 py-2 rounded-full font-semibold hover:bg-yellow-300 transition"
+      >
+        <a href="Login.html">
+        Go
+        </a>
       </button>
     </div>
 
-    <div id="mobile-menu" class="md:hidden hidden flex-col px-4 pb-4 space-y-2 bg-blue-500 rounded-b-2xl text-white">
-      <a href="#" class="block hover:text-yellow-200" data-page-id="home">Home</a>
-      <a href="#" class="block hover:text-yellow-200" data-page-id="about">About</a>
-      <a href="#" class="block hover:text-yellow-200" data-page-id="departments">Departments</a>
-      <a href="#" class="block hover:text-yellow-200" data-page-id="doctors">Doctors</a>
-      <a href="#" class="block hover:text-yellow-200" data-page-id="appointments">Appointments</a>
-      <a href="#" class="block hover:text-yellow-200" data-page-id="contact">Contact</a>
+    <!-- Mobile menu button -->
+    <button id="menu-btn" class="md:hidden text-white text-3xl">
+      <i id="menu-icon" class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile menu (Links - Column) -->
+  <div id="mobile-menu" class="md:hidden hidden flex-col px-4 pb-4 space-y-2 bg-blue-500 rounded-b-2xl text-white">
+    <a href="index.html" class="block hover:text-yellow-200">Home</a>
+    <a href="About.html" class="block hover:text-yellow-200">About</a>
+    <a href="Departments.html" class="block hover:text-yellow-200">Departments</a>
+    <a href="#" class="block hover:text-yellow-200">Doctors</a>
+    <a href="Appointments.html" class="block hover:text-yellow-200">Appointments</a>
+    <a href="Contact.html" class="block hover:text-yellow-200">Contact</a>
+  </div>
+
+  <!-- Mobile Search (Input only - Go button hidden) -->
+  <div id="mobile-search" class="md:hidden hidden px-4 py-2 bg-blue-500 rounded-b-2xl text-white">
+    <input
+      type="text"
+      placeholder="Search..."
+      class="w-full px-4 py-2 rounded-full text-blue-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+    />
+    <!-- Go button hidden on mobile -->
+    <!-- <button class="hidden">Go</button> -->
+  </div>
+</header>
+
+<!-- Doctors Section -->
+<section class="py-20 px-4 sm:px-6 md:px-10 lg:px-20">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl font-bold text-blue-900">Our Expert Doctors</h2>
+    <p class="text-lg text-blue-700 mt-2">Meet the trusted professionals at Horyaal Hospital</p>
+  </div>
+
+  <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <!-- Doctor Cards -->
+    <!-- Waxaa la badalay class-ka sawirrada oo hadda ah aspect-[3/4] -->
+
+    <!-- Doctor 1 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="images/NEU-01-1.png" alt="Dr. Nur Abdullahi" class="w-full aspect-[3/4] object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold">Dr. Nur Abdullahi</h3>
+      <p class="text-sm text-blue-600 italic mb-2">Neuro Surgery</p>
+      <div class="text-yellow-400">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+      </div>
     </div>
 
-    <div id="mobile-search" class="md:hidden hidden px-4 py-2 bg-blue-500 rounded-b-2xl text-white">
-      <input type="text" placeholder="Search..."
-        class="w-full px-4 py-2 rounded-full text-blue-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
+    <!-- Doctor 2 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="images/website logo.png" alt="Dr. Elgaylani Abdala" class="w-full aspect-[3/4] object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold">Dr. Elgaylani Abdala</h3>
+      <p class="text-sm text-blue-600 italic mb-2">Oncology</p>
+      <div class="text-yellow-400">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+      </div>
     </div>
-  </header>
 
-  <main id="main-content">
-
-    <section id="home-page" class="page active py-20 px-4 sm:px-6 md:px-10 lg:px-20 text-center text-blue-900">
-      <h1 class="text-5xl font-bold mb-4">Welcome to Horyaal Hospital</h1>
-      <p class="text-xl">Your health is our priority. We provide world-class medical care with compassion.</p>
-      <div class="mt-8">
-        <button class="bg-red-500 text-white font-bold py-3 px-6 rounded-lg text-lg">Make an Appointment</button>
+    <!-- Doctor 3 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="images/GYN-01-1.png" alt="Dr. Asha Mahad" class="w-full aspect-[3/4] object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold">Dr. Elshiekh eltayib</h3>
+      <p class="text-sm text-blue-600 italic mb-2">OBS AND GYN</p>
+      <div class="text-yellow-400">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
       </div>
-    </section>
-    
-    ---
-    
-    <section id="about-page" class="page py-20 bg-white text-blue-900">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold mb-4">About Horyaal Hospital</h2>
-          <p class="max-w-2xl mx-auto text-lg">
-            Horaal Hospital is a modern healthcare facility dedicated to providing high-quality medical services,
-            compassionate care, and advanced equipment. We offer comprehensive treatment tailored to patient needs.
-          </p>
-        </div>
-        <div class="grid gap-10 md:grid-cols-3">
-          <div class="bg-blue-100 rounded-xl shadow-md hover:shadow-xl transition p-6 text-center">
-            <div class="text-blue-500 text-5xl mb-4">
-              <i class="fas fa-hospital-user"></i>
-            </div>
-            <img src="images/obs-01.jpg" alt="Patient Care" class="rounded-lg mb-4 w-full h-40 object-cover">
-            <h3 class="text-xl font-bold mb-2">Patient Care</h3>
-            <p>We work closely with our patients to understand and respond to their medical needs with compassion and
-              respect.</p>
-          </div>
-          <div class="bg-blue-100 rounded-xl shadow-md hover:shadow-xl transition p-6 text-center">
-            <div class="text-blue-500 text-5xl mb-4">
-              <i class="fas fa-stethoscope"></i>
-            </div>
-            <img src="images/gas-01.jpg" alt="Specialties" class="rounded-lg mb-4 w-full h-40 object-cover">
-            <h3 class="text-xl font-bold mb-2">Multiple Specialties</h3>
-            <p>We provide a wide range of medical services including cardiology, general medicine, pediatrics, and more.</p>
-          </div>
-          <div class="bg-blue-100 rounded-xl shadow-md hover:shadow-xl transition p-6 text-center">
-            <div class="text-blue-500 text-5xl mb-4">
-              <i class="fas fa-briefcase-medical"></i>
-            </div>
-            <img src="images/gettyimages-83205119-612x612.jpg" alt="Modern Equipment"
-              class="rounded-lg mb-4 w-full h-40 object-cover">
-            <h3 class="text-xl font-bold mb-2">Modern Equipment</h3>
-            <p>Our hospital is equipped with state-of-the-art medical technology for accurate and timely diagnostics and
-              treatment.</p>
-          </div>
-        </div>
+    </div>
+
+    <!-- Doctor 4 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="images/UR-01.png" alt="Dr. Ahmed Yare" class="w-full aspect-[3/4] object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold">Dr. badreldin elkhair</h3>
+      <p class="text-sm text-blue-600 italic mb-2">Urology</p>
+      <div class="text-yellow-400">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
       </div>
-    </section>
+    </div>
 
-    ---
-
-    <section id="departments-page" class="page py-16 px-6 bg-blue-100 text-blue-900">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl font-bold mb-4">Our Departments</h1>
-        <p class="text-lg">Explore our specialized medical departments and expert services.</p>
+    <!-- Doctor 5 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="images/oph-01.png" alt="Dr. Fatima Hussein" class="w-full aspect-[3/4] object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold">Dr. Basma Ali</h3>
+      <p class="text-sm text-blue-600 italic mb-2">Ophthalmology
+      </p>
+      <div class="text-yellow-400">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
       </div>
-      <div class="container mx-auto">
-        <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
-          <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition overflow-hidden">
-            <img src="images/gas-01.jpg" alt="General Medicine" class="w-full h-40 object-cover">
-            <div class="p-6">
-              <div class="text-blue-500 text-3xl mb-2"><i class="fas fa-stethoscope"></i></div>
-              <h3 class="text-xl font-semibold mb-2">General Medicine</h3>
-              <p class="text-gray-700">Comprehensive care and diagnosis for all ages.</p>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition overflow-hidden">
-            <img src="images/neur-01.jpg" alt="Pediatrics" class="w-full h-40 object-cover">
-            <div class="p-6">
-              <div class="text-pink-500 text-3xl mb-2"><i class="fas fa-baby"></i></div>
-              <h3 class="text-xl font-semibold mb-2">Pediatrics</h3>
-              <p class="text-gray-700">Dedicated children’s care by specialized pediatricians.</p>
-            </div>
-          </div>
-          <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition overflow-hidden">
-            <img src="images/lab-01.jpg" alt="Orthopedics" class="w-full h-40 object-cover">
-            <div class="p-6">
-              <div class="text-green-500 text-3xl mb-2"><i class="fas fa-bone"></i></div>
-              <h3 class="text-xl font-semibold mb-2">Orthopedics</h3>
-              <p class="text-gray-700">Expert bone and joint treatments and surgeries.</p>
-            </div>
-          </div>
-        </div>
+    </div>
+
+    <!-- Doctor 6 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="images/anes-01.png" alt="Dr. Yusuf Omar" class="w-full aspect-[3/4] object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold">Dr. Tarig Abdalla</h3>
+      <p class="text-sm text-blue-600 italic mb-2">Anesthesia and ICU</p>
+      <div class="text-yellow-400">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
       </div>
-    </section>
+    </div>
 
-    ---
-
-    <section id="doctors-page" class="page py-20 px-4 sm:px-6 md:px-10 lg:px-20 text-blue-900">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold text-blue-900">Our Expert Doctors</h2>
-        <p class="text-lg text-blue-700 mt-2">Meet the trusted professionals at Horyaal Hospital</p>
+    <!-- Doctor 7 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="images/radi-01.png" alt="Dr. Saido Ibrahim" class="w-full aspect-[3/4] object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold">Dr. Yahye garad</h3>
+      <p class="text-sm text-blue-600 italic mb-2">Radiology
+      </p>
+      <div class="text-yellow-400">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
       </div>
-      <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center p-4">
-          <img src="images/NEU-01-1.png" alt="Dr. Nur Abdullahi"
-            class="w-full aspect-[3/4] object-cover rounded-md mb-4">
-          <h3 class="text-xl font-semibold">Dr. Nur Abdullahi</h3>
-          <p class="text-sm text-blue-600 italic mb-2">Neuro Surgery</p>
-          <div class="text-yellow-400">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-              class="far fa-star"></i>
-          </div>
-        </div>
+    </div>
+
+    <!-- Doctor 8 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="images/INT-01-1.png" alt="Dr. Abdi Farah" class="w-full aspect-[3/4] object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold">Dr. Ahmed Suliman</h3>
+      <p class="text-sm text-blue-600 italic mb-2"></p>
+      <div class="text-yellow-400">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
       </div>
-    </section>
+    </div>
 
-    ---
-
-    <section id="appointments-page" class="page py-16 text-blue-900">
-      <div class="container mx-auto px-6 max-w-2xl bg-transparent rounded-3xl p-8">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Book an Appointment</h1>
-        <p class="text-lg">Secure your health by scheduling a visit with our trusted professionals.</p>
+    <!-- Doctor 9 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="images/ped-01.png" alt="Dr. Hodan Warsame" class="w-full aspect-[3/4] object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold">Dr. Abir Ibrahim</h3>
+      <p class="text-sm text-blue-600 italic mb-2">Pediatric and Neonatology
+      </p>
+      <div class="text-yellow-400">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
       </div>
-      <div class="container mx-auto px-6 max-w-2xl bg-white rounded-3xl shadow-2xl p-8">
-        <h2 class="text-2xl font-semibold mb-6 text-center text-blue-600">Fill in your details</h2>
-        <form class="space-y-4">
-          <div>
-            <label class="block text-blue-800 font-medium mb-1">Full Name</label>
-            <input type="text" placeholder="Your name"
-              class="w-full px-4 py-3 rounded-lg border border-blue-300 focus:ring-2 focus:ring-blue-400" />
-          </div>
-          <div>
-            <label class="block text-blue-800 font-medium mb-1">Phone Number</label>
-            <input type="tel" placeholder="e.g. 0612345678"
-              class="w-full px-4 py-3 rounded-lg border border-blue-300 focus:ring-2 focus:ring-blue-400" />
-          </div>
-          <div>
-            <label class="block text-blue-800 font-medium mb-1">Email Address</label>
-            <input type="email" placeholder="you@example.com"
-              class="w-full px-4 py-3 rounded-lg border border-blue-300 focus:ring-2 focus:ring-blue-400" />
-          </div>
-          <div>
-            <label class="block text-blue-800 font-medium mb-1">Select Department</label>
-            <select class="w-full px-4 py-3 rounded-lg border border-blue-300 focus:ring-2 focus:ring-blue-400">
-              <option>General Consultation</option>
-              <option>Cardiology</option>
-              <option>Radiology</option>
-              <option>Laboratory</option>
-              <option>Vaccination</option>
-              <option>Emergency</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-blue-800 font-medium mb-1">Preferred Date & Time</label>
-            <input type="datetime-local"
-              class="w-full px-4 py-3 rounded-lg border border-blue-300 focus:ring-2 focus:ring-blue-400" />
-          </div>
-          <div class="text-center">
-            <button type="submit"
-              class="mt-4 bg-yellow-400 text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all">
-              Submit Appointment
-            </button>
-          </div>
-        </form>
+    </div>
+
+    <!-- Doctor 10 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="images/orthped-01.png" alt="Dr. Mahad Salad" class="w-full aspect-[3/4] object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold">Dr. Shawgi Yahya</h3>
+      <p class="text-sm text-blue-600 italic mb-2">Orthopedic & Sports Medicine</p>
+      <div class="text-yellow-400">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i>
       </div>
-    </section>
+    </div>
 
-    ---
-
-    <section id="contact-page" class="page bg-white py-16">
-      <div class="text-blue-500 py-20">
-        <div class="container mx-auto px-6 text-center">
-          <h1 class="text-4xl font-bold mb-4">Contact Us</h1>
-          <p class="text-lg">If you have any questions or want to book an appointment, feel free to reach out using the
-            form below.</p>
-        </div>
+    <!-- Doctor 11 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="images/den-01.png" alt="Dr. Leyla Mohamed" class="w-full aspect-[3/4] object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold">Dr. Hussam Eldin</h3>
+      <p class="text-sm text-blue-600 italic mb-2">Dental & Maxillofacial</p>
+      <div class="text-yellow-400">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
       </div>
-      <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-        <div class="bg-gray-100 p-8 rounded-3xl shadow-lg">
-          <h2 class="text-2xl font-semibold text-blue-900 mb-6">Contact Form</h2>
-          <form>
-            <div class="mb-4">
-              <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
-              <input type="text" id="name"
-                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Your Name" required>
-            </div>
-            <div class="mb-4">
-              <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-              <input type="email" id="email"
-                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Your Email" required>
-            </div>
-            <div class="mb-4">
-              <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-              <textarea id="message" rows="4"
-                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Write your message here..." required></textarea>
-            </div>
-            <button type="submit"
-              class="bg-blue-900 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-800 transition">Send
-              Message</button>
-          </form>
-        </div>
-        <div class="space-y-6 text-blue-900">
-          <h2 class="text-2xl font-semibold">Contact Information</h2>
-          <div>
-            <p class="font-medium">📞 Phone: <a href="tel:+252612345678" class="underline">+252 61 2345678</a></p>
-            <p class="font-medium">✉️ Email: <a href="mailto:info@horaalhospital.so"
-                class="underline">info@horaalhospital.so</a></p>
-            <p class="font-medium">📍 Address: Wadajir, Mogadishu, Somalia</p>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold">Working Hours:</h3>
-            <p>Monday – Friday: 8:00 AM – 5:00 PM</p>
-            <p>Saturday & Sunday: Closed</p>
-          </div>
-          <div class="mt-6">
-            <div class="w-full h-64 bg-gray-300 rounded-xl flex items-center justify-center">
-              <span class="text-gray-500">Map Placeholder</span>
-            </div>
-          </div>
-        </div>
+    </div>
+
+    <!-- Doctor 12 -->
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center p-4">
+      <img src="images/physio-01.png" alt="Dr. Amina Yusuf" class="w-full aspect-[3/4] object-cover rounded-md mb-4">
+      <h3 class="text-xl font-semibold">Dr. Adam Sulum
+      </h3>
+      <p class="text-sm text-blue-600 italic mb-2">Physiotherapy & Rehabilitation</p>
+      <div class="text-yellow-400">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    ---
-
-    <section id="login-page" class="page relative h-screen">
-      <div class="flex justify-center items-center h-full px-8">
-        <div class="bg-blue-500 p-12 rounded-lg max-w-md w-full">
-          <img src="images/logo-sm.png" class="w-40 mx-auto mb-8" alt="Logo" />
-          <h1 class="text-4xl font-medium text-white mb-8 text-center" id="sign-state-title">Sign In</h1>
-          <form id="login-form">
-            <div id="name-input" class="hidden">
-              <input type="text" placeholder="Your Name"
-                class="w-full h-12 bg-gray-700 text-white px-5 mb-4 rounded-md placeholder-gray-400" />
-            </div>
-            <input type="email" placeholder="Your Email"
-              class="w-full h-12 bg-gray-700 text-white px-5 mb-4 rounded-md placeholder-gray-400" />
-            <input type="password" placeholder="Password"
-              class="w-full h-12 bg-gray-700 text-white px-5 mb-4 rounded-md placeholder-gray-400" />
-            <button type="submit" class="w-full h-12 bg-red-600 text-white rounded-md font-semibold mb-4">Sign
-              In</button>
-            <div class="flex justify-between text-gray-200 text-sm mb-4">
-              <div class="flex items-center">
-                <input type="checkbox" class="mr-2 w-4 h-4" />
-                <label for="">Remember me</label>
-              </div>
-              <p>Need Help?</p>
-            </div>
-          </form>
-          <div class="text-center text-gray-300">
-            <p id="switch-text">
-              New to Horyaal? <span id="switch-link" class="text-white cursor-pointer">Sign Up now</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="bg-blue-600 text-white py-10 text-center">
-    <img src="images/logo-sm.png" class="mx-auto w-16 mb-2" alt="Horaal Logo" />
-    <h3 class="text-xl font-semibold">Horaal Hospital</h3>
-    <p class="text-sm mt-2">Quality healthcare with compassion and trust.</p>
-    <div class="mt-4 flex justify-center space-x-4 text-xl">
+<!-- Footer -->
+<footer class="bg-blue-600 text-white py-8 mt-12">
+  <div class="container mx-auto text-center px-6">
+    <img src="images/logo-sm.png" alt="Logo" class="mx-auto w-20 mb-2" />
+    <h4 class="text-xl font-semibold">Horaal Hospital</h4>
+    <p class="mb-2">Trusted care with expert doctors and modern facilities.</p>
+    <div class="flex justify-center space-x-6 mt-4 text-xl">
       <a href="#"><i class="fab fa-facebook hover:text-yellow-300"></i></a>
       <a href="#"><i class="fab fa-twitter hover:text-yellow-300"></i></a>
       <a href="#"><i class="fab fa-instagram hover:text-yellow-300"></i></a>
     </div>
-    <p class="text-sm mt-4">&copy; 2025 Horaal Hospital. All rights reserved.</p>
-  </footer>
+    <p class="mt-6 text-sm">&copy; 2025 Horyaal Hospital. All rights reserved.</p>
+  </div>
+</footer>
+<!-- JavaScript for responsive navbar -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileSearch = document.getElementById('mobile-search');
+  const menuIcon = document.getElementById('menu-icon');
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const navLinks = document.querySelectorAll('a[data-page-id]');
-      const mainContent = document.getElementById('main-content');
-      const allPages = mainContent.querySelectorAll('.page');
-      
-      // Function to show the selected page and hide others
-      function showPage(pageId) {
-        allPages.forEach(page => {
-          if (page.id === pageId) {
-            page.classList.add('active');
-          } else {
-            page.classList.remove('active');
-          }
-        });
-      }
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileSearch.classList.toggle('hidden');
 
-      // Event listener for navigation links
-      navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const pageId = e.target.getAttribute('data-page-id');
-          // Hide mobile menu after selection
-          mobileMenu.classList.add('hidden');
-          mobileSearch.classList.add('hidden');
-          menuIcon.classList.remove('fa-times');
-          menuIcon.classList.add('fa-bars');
-          showPage(pageId + '-page');
-        });
-      });
-
-      // Existing mobile menu toggle
-      const menuBtn = document.getElementById('menu-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const mobileSearch = document.getElementById('mobile-search');
-      const menuIcon = document.getElementById('menu-icon');
-
-      menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        mobileSearch.classList.toggle('hidden');
-        if (mobileMenu.classList.contains('hidden')) {
-          menuIcon.classList.remove('fa-times');
-          menuIcon.classList.add('fa-bars');
-        } else {
-          menuIcon.classList.remove('fa-bars');
-          menuIcon.classList.add('fa-times');
-        }
-      });
-      
-      // Existing login/signup form logic
-      const signStateTitle = document.getElementById("sign-state-title");
-      const nameInput = document.getElementById("name-input");
-      const switchText = document.getElementById("switch-text");
-      const loginForm = document.getElementById("login-form");
-      let signState = "Sign In";
-
-      document.addEventListener("click", (e) => {
-        if (e.target && e.target.id === "switch-link") {
-          if (signState === "Sign In") {
-            signState = "Sign Up";
-            signStateTitle.innerText = "Sign Up";
-            nameInput.classList.remove("hidden");
-            loginForm.querySelector("button").innerText = "Sign Up";
-            switchText.innerHTML = `Already have an account? <span id="switch-link" class="text-white cursor-pointer">Sign In Now</span>`;
-          } else {
-            signState = "Sign In";
-            signStateTitle.innerText = "Sign In";
-            nameInput.classList.add("hidden");
-            loginForm.querySelector("button").innerText = "Sign In";
-            switchText.innerHTML = `New to Horyaal? <span id="switch-link" class="text-white cursor-pointer">Sign Up now</span>`;
-          }
-        }
-      });
-    });
-  </script>
+    if (mobileMenu.classList.contains('hidden')) {
+      menuIcon.classList.remove('fa-times');
+      menuIcon.classList.add('fa-bars');
+    } else {
+      menuIcon.classList.remove('fa-bars');
+      menuIcon.classList.add('fa-times');
+    }
+  });
+</script>
 
 </body>
-
 </html>
